@@ -19,6 +19,7 @@ class Ecommerce {
 
     }
 
+    // METHODS
     public function setSconto($_fidelity)
 	{
 		if($_fidelity == true) {
@@ -26,6 +27,12 @@ class Ecommerce {
 		}
 	}
 
+    /**
+     * getSconto
+     *
+     * restituisce lo sconto
+     * @return int
+     */
 	public function getSconto()
 	{
 		return $this->sconto;
@@ -47,7 +54,7 @@ class Phone extends Ecommerce
         $this -> connettivita = $_connettivita;
     }
 
-    // METHOD
+    // METHODS
     public function setTechBonus($_prezzo)
     {
         if($_prezzo > 200){
@@ -55,6 +62,12 @@ class Phone extends Ecommerce
         }
     }
 
+    /**
+     * getTechBonus
+     *
+     * restituisce lo sconto
+     * @return int
+     */
     public function getTechBonus()
     {
         return $this -> sconto;
@@ -77,21 +90,25 @@ class Shoe extends Ecommerce
 }
 
 // CREAZIONE ISTANZE
+
+// PHONE
 $pocoPhone = new Phone ("xiaomi", "black", 250, "Android 10.0", "4G");
 var_dump($pocoPhone);
+// PRIMO SCONTO - METODO GENITORE
 $pocoPhone -> setSconto(true);
 echo "Lo sconto per aver acquistato da noi questo cellulare è: " . $pocoPhone -> getSconto() . " €" . "<br>";
+// SECONDO SCONTO - METODO FIGLIO
 $pocoPhone -> setTechBonus($pocoPhone -> prezzo);
 echo "Per l'acquisto di questo prodotto tech hai diritto ad un ulteriore sconto di: " . $pocoPhone -> getTechBonus() . " €" . "<br>";
-
+// UTILIZZO METODO STATICO UNO - SOMMASCONTI
 echo "Gli sconti da te accumulati sono pari a: " . SommaSconti::sum($pocoPhone -> getSconto(), $pocoPhone -> getTechBonus()) . " €" . "<br>"; 
-
+// SALVATAGGIO IN VARIABILE
 $somma = SommaSconti::sum($pocoPhone -> getSconto(), $pocoPhone -> getTechBonus());
+// UTILIZZO METODO STATICO DUE - TOTALE
+echo "Il totale da pagare é: " . Totale::calc($pocoPhone -> prezzo, $somma);
 
 
-echo "Il totale da pagare é: " . Totale::sum($pocoPhone -> prezzo, $somma);
-// echo "Totale: " . $pocoPhone -> prezzo . " - " . $pocoPhone -> getSconto() . " - " . $pocoPhone -> getTechBonus() . " = 230 €" ;
-
+// SHOE
 $superRunner = new Shoe ("nike", "orange", 130, "rubber", 43);
 var_dump($superRunner);
 $superRunner -> setSconto(true);
