@@ -15,9 +15,9 @@ class Ecommerce {
 
     }
 
-    public function setSconto($_socio)
+    public function setSconto($_fidelity)
 	{
-		if($_socio == true) {
+		if($_fidelity == true) {
 			$this->sconto = 10;
 		}
 	}
@@ -42,6 +42,19 @@ class Phone extends Ecommerce
         $this -> sistemaOperativo = $_sistemaOperativo;
         $this -> connettivita = $_connettivita;
     }
+
+    // METHOD
+    public function setTechBonus($_prezzo)
+    {
+        if($_prezzo > 200){
+            $this -> sconto = 10;
+        }
+    }
+
+    public function getTechBonus()
+    {
+        return $this -> sconto;
+    }
 }
 
 // CLASSE FIGLIA SHOE
@@ -60,9 +73,17 @@ class Shoe extends Ecommerce
 }
 
 // CREAZIONE ISTANZE
-$pocoPhone = new Phone ("xiaomi", "black", 200, "Android 10.0", "4G");
+$pocoPhone = new Phone ("xiaomi", "black", 250, "Android 10.0", "4G");
 var_dump($pocoPhone);
+$pocoPhone -> setSconto(true);
+echo "Lo sconto per aver acquistato da noi questo cellulare è: " . $pocoPhone -> getSconto() . " €" . "<br>";
+$pocoPhone -> setTechBonus($pocoPhone -> prezzo);
+echo "Per l'acquisto di questo prodotto tech hai diritto ad un ulteriore sconto di: " . $pocoPhone -> getTechBonus() . " €" . "<br>";
+echo "Totale: " . $pocoPhone -> prezzo . " - " . $pocoPhone -> getSconto() . " - " . $pocoPhone -> getTechBonus() . " = 230 €" ;
 
 $superRunner = new Shoe ("nike", "orange", 130, "rubber", 43);
 var_dump($superRunner);
+$superRunner -> setSconto(true);
+echo "Lo sconto per aver acquistato da noi queste scarpe è: " . $superRunner -> getSconto() . " €" . "<br>";
+echo "Totale: " . $superRunner -> prezzo . " - " . $superRunner -> getSconto() . " = 120 €";
 ?>
