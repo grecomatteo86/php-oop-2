@@ -29,7 +29,7 @@ class Ecommerce {
 
 }
 
-// CLASSE FIGLIA
+// CLASSE FIGLIA PHONE
 class Phone extends Ecommerce
 {
     public $sistemaOperativo;
@@ -44,8 +44,8 @@ class Phone extends Ecommerce
     }
 }
 
-// CLASSE FIGLIA
-class Shoes extends Ecommerce
+// CLASSE FIGLIA SHOE
+class Shoe extends Ecommerce
 {
     public $materiale;
     public $numero;
@@ -59,4 +59,10 @@ class Shoes extends Ecommerce
     }
 }
 
+// CREAZIONE ISTANZE
+$pocoPhone = new Phone ("xiaomi", "black", 200, "Android 10.0", "4G");
+var_dump($pocoPhone);
+
+$superRunner = new Shoe ("nike", "orange", 130, "rubber", 43);
+var_dump($superRunner);
 ?>
