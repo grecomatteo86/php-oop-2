@@ -16,6 +16,13 @@ class Phone extends Ecommerce
     }
 
     // METODI
+
+    /**
+     * setTechBonus
+     *
+     * @param integer $_prezzo
+     * @return void
+     */
     public function setTechBonus(int $_prezzo)
     {
         if($_prezzo > 200){
@@ -28,7 +35,7 @@ class Phone extends Ecommerce
      * restituisce lo sconto
      * @return int
      */
-    public function getTechBonus()
+    public function getTechBonus():int
     {
         return $this -> sconto;
     }

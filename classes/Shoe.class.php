@@ -18,6 +18,14 @@ class Shoe extends Ecommerce
     }
 
     // METODI
+
+    /**
+     * setPerformance
+     *
+     * in base alla performance attribuisce un valore numerico
+     * @param string $_performance
+     * @return void
+     */
     public function setPerformance(string $_performance)
     {
         if($_performance == "amatoriale"){
@@ -27,6 +35,12 @@ class Shoe extends Ecommerce
         }
     }
 
+    /**
+     * setSconto
+     *
+     * imposta lo sconto in base al valore numerico dato dalla performance
+     * @return void
+     */
     public function setSconto()
     {
         $this -> sconto = $this -> performance * 2;

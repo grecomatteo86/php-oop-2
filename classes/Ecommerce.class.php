@@ -18,6 +18,13 @@ class Ecommerce {
     }
 
     // METODI
+
+    /**
+     * setSconto
+     *
+     * @param boolean $_fidelity
+     * @return void
+     */
     public function setSconto( bool $_fidelity)
 	{
 		if($_fidelity == true) {
@@ -30,7 +37,7 @@ class Ecommerce {
      * restituisce lo sconto
      * @return int
      */
-	public function getSconto()
+	public function getSconto():int
 	{
 		return $this->sconto;
 	}
