@@ -9,7 +9,7 @@ class Ecommerce {
     public $sconto = 0;
     
     // CONSTRUTTORE
-    public function __construct($_produttore, $_colore, $_prezzo)
+    public function __construct(string $_produttore, string $_colore, int $_prezzo)
     {
         $this -> produttore = $_produttore;
         $this -> colore = $_colore;
@@ -18,7 +18,7 @@ class Ecommerce {
     }
 
     // METODI
-    public function setSconto($_fidelity)
+    public function setSconto( bool $_fidelity)
 	{
 		if($_fidelity == true) {
 			$this->sconto = 10;

@@ -8,7 +8,7 @@ class Phone extends Ecommerce
     public $connettivita;
 
     // CONSTRUTTORE
-    public function __construct($_produttore, $_colore, $_prezzo, $_sistemaOperativo, $_connettivita)
+    public function __construct(string $_produttore, string $_colore, int $_prezzo, string $_sistemaOperativo, string $_connettivita)
     {
         parent::__construct($_produttore, $_colore, $_prezzo);
         $this -> sistemaOperativo = $_sistemaOperativo;
@@ -16,7 +16,7 @@ class Phone extends Ecommerce
     }
 
     // METODI
-    public function setTechBonus($_prezzo)
+    public function setTechBonus(int $_prezzo)
     {
         if($_prezzo > 200){
             $this -> sconto = 10;

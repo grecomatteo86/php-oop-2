@@ -11,11 +11,6 @@ include_once __DIR__ . '/classes/SommaSconti.class.php';
 include_once __DIR__ . '/classes/Totale.class.php';
 
 
-
-
-
-
-
 // CREAZIONE ISTANZE
 
 // PHONE

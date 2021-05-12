@@ -9,7 +9,7 @@ class Shoe extends Ecommerce
     public $performance;
 
     // CONSTRUTTORE
-    public function __construct($_produttore, $_colore, $_prezzo, $_materiale, $_numero, $_performance)
+    public function __construct(string $_produttore, string $_colore, int $_prezzo, string $_materiale, int $_numero, string $_performance)
     {
         parent::__construct($_produttore, $_colore, $_prezzo);
         $this -> materiale = $_materiale;
@@ -18,7 +18,7 @@ class Shoe extends Ecommerce
     }
 
     // METODI
-    public function setPerformance($_performance)
+    public function setPerformance(string $_performance)
     {
         if($_performance == "amatoriale"){
             $this -> performance = 5;
