@@ -1,109 +1,20 @@
 <?php
 
-include_once __DIR__ . '/classes/sommaSconti.class.php';
-include_once __DIR__ . '/classes/totale.class.php';
+// INCLUSIONE CLASSE GENITORE
+include_once __DIR__ . '/classes/Ecommerce.class.php';
+// INCLUSIONE CLASSE FIGLIA PHONE
+include_once __DIR__ . '/classes/Phone.class.php';
+// INCLUSIONE CLASSE FIGLIA SHOE
+include_once __DIR__ . '/classes/Shoe.class.php';
+// INCLUSIONE METODI STATICI
+include_once __DIR__ . '/classes/SommaSconti.class.php';
+include_once __DIR__ . '/classes/Totale.class.php';
 
-// CLASSE GENITORE
-class Ecommerce {
-    public $produttore;
-    public $colore;
-    public $prezzo;
-    public $sconto = 0;
-    
-    // CONSTRUCT
-    public function __construct($_produttore, $_colore, $_prezzo)
-    {
-        $this -> produttore = $_produttore;
-        $this -> colore = $_colore;
-        $this -> prezzo = $_prezzo;
 
-    }
 
-    // METHODS
-    public function setSconto($_fidelity)
-	{
-		if($_fidelity == true) {
-			$this->sconto = 10;
-		}
-	}
 
-    /**
-     * getSconto
-     * restituisce lo sconto
-     * @return int
-     */
-	public function getSconto()
-	{
-		return $this->sconto;
-	}
 
-}
 
-// CLASSE FIGLIA PHONE
-class Phone extends Ecommerce
-{
-    public $sistemaOperativo;
-    public $connettivita;
-
-    // CONSTRUCT
-    public function __construct($_produttore, $_colore, $_prezzo, $_sistemaOperativo, $_connettivita)
-    {
-        parent::__construct($_produttore, $_colore, $_prezzo);
-        $this -> sistemaOperativo = $_sistemaOperativo;
-        $this -> connettivita = $_connettivita;
-    }
-
-    // METHODS
-    public function setTechBonus($_prezzo)
-    {
-        if($_prezzo > 200){
-            $this -> sconto = 10;
-        }
-    }
-
-    /**
-     * getTechBonus
-     * restituisce lo sconto
-     * @return int
-     */
-    public function getTechBonus()
-    {
-        return $this -> sconto;
-    }
-}
-
-// CLASSE FIGLIA SHOE
-class Shoe extends Ecommerce
-{
-    public $materiale;
-    public $numero;
-    public $performance;
-
-    // CONSTRUCT
-    public function __construct($_produttore, $_colore, $_prezzo, $_materiale, $_numero, $_performance)
-    {
-        parent::__construct($_produttore, $_colore, $_prezzo);
-        $this -> materiale = $_materiale;
-        $this -> numero = $_numero;
-        $this -> performance = $_performance;
-    }
-
-    // METHODS
-    public function setPerformance($_performance)
-    {
-        if($_performance == "amatoriale"){
-            $this -> performance = 5;
-        }elseif($_performance == "professionista"){
-            $this -> performance = 10;
-        }
-    }
-
-    public function setSconto()
-    {
-        $this -> sconto = $this -> performance * 2;
-    }
-
-}
 
 // CREAZIONE ISTANZE
 
