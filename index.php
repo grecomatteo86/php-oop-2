@@ -6,8 +6,8 @@ class Ecommerce {
     public $prezzo;
     public $sconto = 0;
     
-    // METODI
-    public function __constructor($_produttore, $_colore, $_prezzo)
+    // CONSTRUCT
+    public function __construct($_produttore, $_colore, $_prezzo)
     {
         $this -> produttore = $_produttore;
         $this -> colore = $_colore;
@@ -34,6 +34,14 @@ class Phone extends Ecommerce
 {
     public $sistemaOperativo;
     public $connettivita;
+
+    // CONSTRUCT
+    public function __construct($_produttore, $_colore, $_prezzo, $_sistemaOperativo, $_connettivita)
+    {
+        parent::__construct($_produttore, $_colore, $_prezzo);
+        $this -> sistemaOperativo = $_sistemaOperativo;
+        $this -> connettivita = $_connettivita;
+    }
 }
 
 // CLASSE FIGLIA
@@ -41,6 +49,14 @@ class Shoes extends Ecommerce
 {
     public $materiale;
     public $numero;
+
+    // CONSTRUCT
+    public function __construct($_produttore, $_colore, $_prezzo, $_materiale, $_numero)
+    {
+        parent::__construct($_produttore, $_colore, $_prezzo);
+        $this -> materiale = $_materiale;
+        $this -> numero = $_numero;
+    }
 }
 
 ?>
