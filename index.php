@@ -1,6 +1,7 @@
 <?php
 
 include_once __DIR__ . '/classes/sommaSconti.class.php';
+include_once __DIR__ . '/classes/totale.class.php';
 
 // CLASSE GENITORE
 class Ecommerce {
@@ -83,8 +84,12 @@ echo "Lo sconto per aver acquistato da noi questo cellulare è: " . $pocoPhone -
 $pocoPhone -> setTechBonus($pocoPhone -> prezzo);
 echo "Per l'acquisto di questo prodotto tech hai diritto ad un ulteriore sconto di: " . $pocoPhone -> getTechBonus() . " €" . "<br>";
 
-echo "Gli sconti da te accumulati sono pari a: " . sommaSconti::sum($pocoPhone -> getSconto(), $pocoPhone -> getTechBonus()) . " €" . "<br>"; 
+echo "Gli sconti da te accumulati sono pari a: " . SommaSconti::sum($pocoPhone -> getSconto(), $pocoPhone -> getTechBonus()) . " €" . "<br>"; 
 
+$somma = SommaSconti::sum($pocoPhone -> getSconto(), $pocoPhone -> getTechBonus());
+
+
+echo "Il totale da pagare é: " . Totale::sum($pocoPhone -> prezzo, $somma);
 // echo "Totale: " . $pocoPhone -> prezzo . " - " . $pocoPhone -> getSconto() . " - " . $pocoPhone -> getTechBonus() . " = 230 €" ;
 
 $superRunner = new Shoe ("nike", "orange", 130, "rubber", 43);

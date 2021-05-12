@@ -1,6 +1,6 @@
 <?php
 
-class sommaSconti{
+class SommaSconti{
 
     public static function sum($_sconto1, $_sconto2)
     {
