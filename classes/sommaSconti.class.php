@@ -1,7 +1,5 @@
 <?php
-
 class SommaSconti{
-
     /**
      * sum
      * restituisce una somma
@@ -11,7 +9,5 @@ class SommaSconti{
     {
         return $_sconto1 + $_sconto2;
     }
-
 }
-
 ?>

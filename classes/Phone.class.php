@@ -1,12 +1,10 @@
 <?php
-
 // CLASSE FIGLIA PHONE
 class Phone extends Ecommerce
 {
     // ATTRIBUTI
     public $sistemaOperativo;
     public $connettivita;
-
     // CONSTRUTTORE
     public function __construct(string $_produttore, string $_colore, int $_prezzo, string $_sistemaOperativo, string $_connettivita)
     {
@@ -14,9 +12,7 @@ class Phone extends Ecommerce
         $this -> sistemaOperativo = $_sistemaOperativo;
         $this -> connettivita = $_connettivita;
     }
-
     // METODI
-
     /**
      * setTechBonus
      *
@@ -29,7 +25,6 @@ class Phone extends Ecommerce
             $this -> sconto = 10;
         }
     }
-
     /**
      * getTechBonus
      * restituisce lo sconto
@@ -40,5 +35,4 @@ class Phone extends Ecommerce
         return $this -> sconto;
     }
 }
-
 ?>

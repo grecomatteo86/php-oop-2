@@ -1,7 +1,5 @@
 <?php
-
 class Totale{
-
     /**
      * calc
      * restituisce una sottrazione
@@ -12,5 +10,4 @@ class Totale{
         return $_totale1 - $_sconti;
     }
 }
-
 ?>

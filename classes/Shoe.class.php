@@ -1,5 +1,4 @@
 <?php
-
 // CLASSE FIGLIA SHOE
 class Shoe extends Ecommerce
 {
@@ -7,7 +6,6 @@ class Shoe extends Ecommerce
     public $materiale;
     public $numero;
     public $performance;
-
     // CONSTRUTTORE
     public function __construct(string $_produttore, string $_colore, int $_prezzo, string $_materiale, int $_numero, string $_performance)
     {
@@ -16,9 +14,7 @@ class Shoe extends Ecommerce
         $this -> numero = $_numero;
         $this -> performance = $_performance;
     }
-
     // METODI
-
     /**
      * setPerformance
      *
@@ -34,7 +30,6 @@ class Shoe extends Ecommerce
             $this -> performance = 10;
         }
     }
-
     /**
      * setSconto
      *
@@ -45,7 +40,5 @@ class Shoe extends Ecommerce
     {
         $this -> sconto = $this -> performance * 2;
     }
-
 }
-
 ?>
